@@ -44,9 +44,9 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          sudo docker stop spring-demo || true
-          sudo docker rm spring-demo || true
-          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/petpooja-demo-qr:latest
-          sudo docker run -d --name spring-demo -p 8083:8080 ${{ secrets.DOCKERHUB_USERNAME }}/petpooja-demo-qr:latest
+          docker stop spring-demo || true
+          docker rm spring-demo || true
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/petpooja-demo-qr:latest
+          docker run -d --name spring-demo -p 8083:8080 ${{ secrets.DOCKERHUB_USERNAME }}/petpooja-demo-qr:latest
           
     
