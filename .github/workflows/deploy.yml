@@ -47,6 +47,6 @@ jobs:
           docker stop spring-demo || true
           docker rm spring-demo || true
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/petpooja-demo-qr:latest
-          docker run -d --name spring-demo -p 8083:8080 ${{ secrets.DOCKERHUB_USERNAME }}/petpooja-demo-qr:latest
+          docker run -d --name spring-demo -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/petpooja-demo-qr:latest
           
     
